@@ -1,3 +1,30 @@
-<%= @player_1_name %> vs. <%= @player_2_name %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Battle</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-<%= @player_2_name %>: 60HP
+  <div class="container">
+  
+   <%= @game.current_turn.name %>'s turn
+
+<%= @game.player_1.name %> vs. <%= @game.player_2.name %>
+<%= @game.player_1.name %>: <%= @game.player_1.hit_points %>HP
+<%= @game.player_2.name %>: <%= @game.player_2.hit_points %>HP
+
+<br>
+<br>
+<form action="/attack">
+  <input class="btn" type="submit" value="Attack">
+  <br>
+  <br>
+  <a href="<%= uri('/') %>">Start Again!</a>
+</form>
+</div> 
+</body>
+</html>
