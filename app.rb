@@ -7,7 +7,7 @@ class Battle < Sinatra::Base
   end
 
   get '/' do
-   "Testing infrastructure working!"
+   erb :index
   end
 
   # start the server if ruby file executed directly
